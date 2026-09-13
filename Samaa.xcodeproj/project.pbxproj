@@ -1,0 +1,281 @@
+// !UTF8*
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		11000001 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000001 /* MainTabView.swift */; };
+		11000002 /* DhikrItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000002 /* DhikrItem.swift */; };
+		11000003 /* Color+SamaaTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000003 /* Color+SamaaTheme.swift */; };
+		11000004 /* AdhkarDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000004 /* AdhkarDetailView.swift */; };
+		11000005 /* AdhkarHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000005 /* AdhkarHomeView.swift */; };
+		11000006 /* DhikrCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000006 /* DhikrCardView.swift */; };
+		11000007 /* QiblaCompassView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000007 /* QiblaCompassView.swift */; };
+		11000008 /* AstronomicalPrayerCalculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000008 /* AstronomicalPrayerCalculator.swift */; };
+		11000009 /* PrayerCalculationModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000009 /* PrayerCalculationModels.swift */; };
+		11000010 /* AdhanAudioEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000010 /* AdhanAudioEngine.swift */; };
+		11000011 /* HomeScreenFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000011 /* HomeScreenFullView.swift */; };
+		11000012 /* MasterSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000012 /* MasterSettingsView.swift */; };
+		11000013 /* PrayerSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000013 /* PrayerSettingsView.swift */; };
+		11000014 /* HijriCalendarFullView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000014 /* HijriCalendarFullView.swift */; };
+		11000015 /* AppearanceEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12000015 /* AppearanceEnums.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		12000001 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+		12000002 /* DhikrItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrItem.swift; sourceTree = "<group>"; };
+		12000003 /* Color+SamaaTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+SamaaTheme.swift"; sourceTree = "<group>"; };
+		12000004 /* AdhkarDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhkarDetailView.swift; sourceTree = "<group>"; };
+		12000005 /* AdhkarHomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhkarHomeView.swift; sourceTree = "<group>"; };
+		12000006 /* DhikrCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DhikrCardView.swift; sourceTree = "<group>"; };
+		12000007 /* QiblaCompassView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QiblaCompassView.swift; sourceTree = "<group>"; };
+		12000008 /* AstronomicalPrayerCalculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AstronomicalPrayerCalculator.swift; sourceTree = "<group>"; };
+		12000009 /* PrayerCalculationModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerCalculationModels.swift; sourceTree = "<group>"; };
+		12000010 /* AdhanAudioEngine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdhanAudioEngine.swift; sourceTree = "<group>"; };
+		12000011 /* HomeScreenFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreenFullView.swift; sourceTree = "<group>"; };
+		12000012 /* MasterSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterSettingsView.swift; sourceTree = "<group>"; };
+		12000013 /* PrayerSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrayerSettingsView.swift; sourceTree = "<group>"; };
+		12000014 /* HijriCalendarFullView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HijriCalendarFullView.swift; sourceTree = "<group>"; };
+		12000015 /* AppearanceEnums.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppearanceEnums.swift; sourceTree = "<group>"; };
+		12000016 /* Samaa.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Samaa.app; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		13000001 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		14000001 = {
+			isa = PBXGroup;
+			children = (
+				14000002 /* Samaa */,
+				14000003 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		14000002 /* Samaa */ = {
+			isa = PBXGroup;
+			children = (
+				12000001 /* MainTabView.swift */,
+				12000015 /* AppearanceEnums.swift */,
+				12000002 /* DhikrItem.swift */,
+				12000003 /* Color+SamaaTheme.swift */,
+				12000004 /* AdhkarDetailView.swift */,
+				12000005 /* AdhkarHomeView.swift */,
+				12000006 /* DhikrCardView.swift */,
+				12000007 /* QiblaCompassView.swift */,
+				12000008 /* AstronomicalPrayerCalculator.swift */,
+				12000009 /* PrayerCalculationModels.swift */,
+				12000010 /* AdhanAudioEngine.swift */,
+				12000011 /* HomeScreenFullView.swift */,
+				12000012 /* MasterSettingsView.swift */,
+				12000013 /* PrayerSettingsView.swift */,
+				12000014 /* HijriCalendarFullView.swift */,
+			);
+			path = .;
+			sourceTree = "<group>";
+		};
+		14000003 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				12000016 /* Samaa.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		15000001 /* Samaa */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 16000001 /* Build configuration list for PBXNativeTarget "Samaa" */;
+			buildPhases = (
+				17000001 /* Sources */,
+				13000001 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Samaa;
+			productName = Samaa;
+			productReference = 12000016 /* Samaa.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		18000001 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					15000001 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+				};
+			};
+			buildConfigurationList = 16000002 /* Build configuration list for PBXProject "Samaa" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+				ar,
+			);
+			mainGroup = 14000001;
+			productRefGroup = 14000003 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				15000001 /* Samaa */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		17000001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11000001 /* MainTabView.swift in Sources */,
+				11000002 /* DhikrItem.swift in Sources */,
+				11000003 /* Color+SamaaTheme.swift in Sources */,
+				11000004 /* AdhkarDetailView.swift in Sources */,
+				11000005 /* AdhkarHomeView.swift in Sources */,
+				11000006 /* DhikrCardView.swift in Sources */,
+				11000007 /* QiblaCompassView.swift in Sources */,
+				11000008 /* AstronomicalPrayerCalculator.swift in Sources */,
+				11000009 /* PrayerCalculationModels.swift in Sources */,
+				11000010 /* AdhanAudioEngine.swift in Sources */,
+				11000011 /* HomeScreenFullView.swift in Sources */,
+				11000012 /* MasterSettingsView.swift in Sources */,
+				11000013 /* PrayerSettingsView.swift in Sources */,
+				11000014 /* HijriCalendarFullView.swift in Sources */,
+				11000015 /* AppearanceEnums.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		19000001 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"",
+				);
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.samaa;
+				PRODUCT_NAME = "Samaa";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19000002 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_OPTIMIZATION_LEVEL = s;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.samaa;
+				PRODUCT_NAME = "Samaa";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19000003 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.samaa;
+				PRODUCT_NAME = "Samaa";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		19000004 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ENABLE_MODULES = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aistudio.samaa;
+				PRODUCT_NAME = "Samaa";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		16000001 /* Build configuration list for PBXNativeTarget "Samaa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19000001 /* Debug */,
+				19000002 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		16000002 /* Build configuration list for PBXProject "Samaa" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19000003 /* Debug */,
+				19000004 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+	};
+	rootObject = 18000001 /* Project object */;
+}
