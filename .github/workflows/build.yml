@@ -1,0 +1,55 @@
+name: Build Samaa iOS App
+
+# تحديد متى يعمل هذا الخط: عند عمل Push للفرع main أو يدويًا من الموقع
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+jobs:
+  build-ios:
+    # استخدام سيرفر ماك سحابي من آبل
+    runs-on: macos-14
+
+    steps:
+      # 1. استنساخ وتحميل كود المشروع داخل سيرفر الماك
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # 2. تحديد إصدار بيئة Xcode المناسبة للبناء
+      - name: Set Xcode Version
+        run: sudo xcode-select -s /Applications/Xcode_15.4.app
+
+      # 3. التحقق من وجود ملف المشروع تلقائياً (سواء كان في المجلد الرئيسي أو الفرعي)
+      - name: Locate Xcode Project and Scheme
+        run: |
+          PROJ=$(find . -name "*.xcodeproj" -maxdepth 2 | head -n 1)
+          echo "PROJECT_PATH=$PROJ" >> $GITHUB_ENV
+          echo "Found project at: $PROJ"
+
+      # 4. بناء وتجميع الكود البرمجي وإنشاء أرشيف التطبيق
+      - name: Build and Archive Project
+        run: |
+          xcodebuild archive \
+            -project "${{ env.PROJECT_PATH }}" \
+            -scheme "Samaa" \
+            -destination 'generic/platform=iOS' \
+            -archivePath build/Samaa.xcarchive \
+            CODE_SIGNING_ALLOWED=NO \
+            CODE_SIGNING_REQUIRED=NO \
+            CODE_SIGN_IDENTITY="" \
+            clean archive
+
+      # 5. تحويل ناتج التجميع إلى ملف تثبيت بصيغة .ipa
+      - name: Package App into IPA
+        run: |
+          mkdir -p Payload
+          cp -r build/Samaa.xcarchive/Products/Applications/*.app Payload/
+          zip -r Samaa.ipa Payload
+
+      # 6. رفع ملف الـ IPA إلى صفحة GitHub لتتمكن من تنزيله
+      - name: Upload IPA Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Samaa-iOS-IPA
+          path: Samaa.ipa
