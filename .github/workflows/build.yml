@@ -1,6 +1,5 @@
 name: Build Samaa iOS App
 
-# تحديد متى يعمل هذا الخط: عند عمل Push للفرع main أو يدويًا من الموقع
 on:
   push:
     branches: [ "main" ]
@@ -8,31 +7,46 @@ on:
 
 jobs:
   build-ios:
-    # استخدام سيرفر ماك سحابي من آبل
     runs-on: macos-14
 
     steps:
-      # 1. استنساخ وتحميل كود المشروع داخل سيرفر الماك
+      # 1. جلب كود المستودع بالكامل
       - name: Checkout Repository
         uses: actions/checkout@v4
 
-      # 2. تحديد إصدار بيئة Xcode المناسبة للبناء
+      # 2. تحديد إصدار بيئة Xcode
       - name: Set Xcode Version
         run: sudo xcode-select -s /Applications/Xcode_15.4.app
 
-      # 3. التحقق من وجود ملف المشروع تلقائياً (سواء كان في المجلد الرئيسي أو الفرعي)
-      - name: Locate Xcode Project and Scheme
-        run: |
-          PROJ=$(find . -name "*.xcodeproj" -maxdepth 2 | head -n 1)
-          echo "PROJECT_PATH=$PROJ" >> $GITHUB_ENV
-          echo "Found project at: $PROJ"
-
-      # 4. بناء وتجميع الكود البرمجي وإنشاء أرشيف التطبيق
+      # 3. اكتشاف المشروع تلقائياً وتجميع الكود
       - name: Build and Archive Project
         run: |
+          # البحث التلقائي عن أي ملف .xcodeproj في المستودع
+          PROJECT_FILE=$(find . -maxdepth 3 -name "*.xcodeproj" -print -quit)
+          
+          if [ -z "$PROJECT_FILE" ]; then
+            echo "❌ خطأ: لم يتم العثور على أي ملف .xcodeproj في المستودع!"
+            echo "قائمة الملفات الموجودة حالياً:"
+            ls -R
+            exit 1
+          fi
+
+          echo "✅ تم العثور على المشروع في: $PROJECT_FILE"
+
+          # استخراج اسم أول Scheme متاح داخل المشروع تلقائياً
+          SCHEME_NAME=$(xcodebuild -list -project "$PROJECT_FILE" | awk '/Schemes:/{flag=1;next}/^[[:space:]]*$/{flag=0}flag' | sed 's/^[ \t]*//' | head -n 1)
+          
+          if [ -z "$SCHEME_NAME" ]; then
+            echo "❌ خطأ: لم يتم العثور على أي Scheme داخل المشروع!"
+            exit 1
+          fi
+
+          echo "✅ سيتم البناء باستخدام الـ Scheme: $SCHEME_NAME"
+
+          # تنفيذ عملية البناء والأرشفة مع تجاوز التوقيع
           xcodebuild archive \
-            -project "${{ env.PROJECT_PATH }}" \
-            -scheme "Samaa" \
+            -project "$PROJECT_FILE" \
+            -scheme "$SCHEME_NAME" \
             -destination 'generic/platform=iOS' \
             -archivePath build/Samaa.xcarchive \
             CODE_SIGNING_ALLOWED=NO \
@@ -40,16 +54,19 @@ jobs:
             CODE_SIGN_IDENTITY="" \
             clean archive
 
-      # 5. تحويل ناتج التجميع إلى ملف تثبيت بصيغة .ipa
+      # 4. تحزيم الناتج في ملف تثبيت بصيغة .ipa
       - name: Package App into IPA
         run: |
           mkdir -p Payload
+          # نسخ مجلد التطبيق المترجم (.app) داخل Payload
           cp -r build/Samaa.xcarchive/Products/Applications/*.app Payload/
+          # ضغط المجلد بصيغة ipa
           zip -r Samaa.ipa Payload
 
-      # 6. رفع ملف الـ IPA إلى صفحة GitHub لتتمكن من تنزيله
+      # 5. رفع الملف الناتج لخانة التحميل (Artifacts)
       - name: Upload IPA Artifact
         uses: actions/upload-artifact@v4
         with:
           name: Samaa-iOS-IPA
           path: Samaa.ipa
+          retention-days: 7
